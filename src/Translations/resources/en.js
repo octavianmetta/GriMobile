@@ -1,5 +1,6 @@
 export default {
   appName: 'GRI Standard',
+  splashText: 'Agar kamu dapat menerapkan standar ini di setiap laporan',
   welcome: 'Welcome to React Native GriMobile by TheCodingMachine',
   actions: {
     continue: 'Continue',

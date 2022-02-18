@@ -47,6 +47,9 @@ export default function () {
       flexDirection: 'row',
       alignItems: 'center',
     },
+    bottom: {
+      justifyContent: 'flex-end',
+    },
     /* Default Layouts */
     center: {
       alignItems: 'center',
