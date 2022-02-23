@@ -8,7 +8,7 @@ import { Gutters } from '@/Theme'
 import { navigate } from '@/Navigators/utils'
 
 
-const SplashContainer = () => {
+const HomeContainer = () => {
 
     const { Layout, Gutters, Fonts, Images } = useTheme()
 
@@ -20,38 +20,7 @@ const SplashContainer = () => {
             resizeMode="cover"
             style={[Layout.fill, Layout.fullSize, Layout.colVCenter]}>
 
-            <View style={[Gutters.largeVMargin]} />
 
-            <GriLogo
-                height={120}
-                width={120} />
-
-            <View style={{ marginVertical: 16 }} />
-
-            <Text style={[styles.titleText]}>
-                {t('appName')}
-            </Text>
-
-            <View style={{ marginVertical: 2 }} />
-
-            <Text style={[styles.subtitleText]}>
-                {t('splashText')}
-            </Text>
-
-            <View
-                accessibilityLabel='buttonContainer'
-                style={[styles.buttonParentContainer]}>
-
-                <TouchableOpacity
-                    accessibilityLabel='buttonStart'
-                    style={[styles.buttonContainer]}
-                    title="Press me"
-                    onPress={() => navigate('Home')}>
-                    <View style={[styles.buttonStart]}>
-                        <Text style={[styles.textStart]}>Yuk Mulai</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
         </ImageBackground>
 
     )
@@ -100,4 +69,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default SplashContainer
+export default HomeContainer

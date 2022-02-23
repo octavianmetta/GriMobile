@@ -2,9 +2,9 @@ import React from 'react'
 import { SafeAreaView, StatusBar } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
-import { StartupContainer, SplashContainer } from '@/Containers'
+import { StartupContainer, SplashContainer, HomeContainer } from '@/Containers'
 import { useTheme } from '@/Hooks'
-import MainNavigator from './Main'
+import { MainNavigator, HomeNavigator } from '@/Navigators'
 import { navigationRef } from './utils'
 
 const Stack = createStackNavigator()
@@ -18,7 +18,9 @@ const ApplicationNavigator = () => {
     <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
         <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator
+          initialRouteName='Splash'
+          screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Startup" component={StartupContainer} />
           <Stack.Screen
             name="Main"
@@ -30,6 +32,10 @@ const ApplicationNavigator = () => {
           <Stack.Screen
             name="Splash"
             component={SplashContainer}
+          />
+          <Stack.Screen
+            name="Home"
+            component={HomeNavigator}
           />
         </Stack.Navigator>
       </NavigationContainer>
